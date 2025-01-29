@@ -27,8 +27,8 @@ sudo -v
     echo "=== Fin du rapport ==="
 } > "$LOGFILE" 2>&1
 
-# Envoyer le fichier par email
-cat "$LOGFILE" | mail -s "Rapport de gestion APT du ${DATE}" admin@gulliver77.org
+# Envoyer le fichier par email (remplcer <mail> par votre mail)
+cat "$LOGFILE" | mail -s "Rapport de gestion APT du ${DATE}" <mail>
 
 # Afficher un message de confirmation
-echo "Les opérations sont terminées. Le rapport a été envoyé à admin@gulliver77.org"
+echo "Les opérations sont terminées. Le rapport a été envoyé à <mail>"
