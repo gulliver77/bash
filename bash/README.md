@@ -1,4 +1,4 @@
-Je vais vous aider à créer un script bash qui gère les mises à jour du système et envoie un rapport par email.
+Ce script bash gère les mises à jour du système et envoie un rapport par email (aide de ChatGPT)
 
 ```shell:bash/gestion-apt.sh
 #!/bin/bash
@@ -31,10 +31,10 @@ sudo -v
 } > "$LOGFILE" 2>&1
 
 # Envoyer le fichier par email
-cat "$LOGFILE" | mail -s "Rapport de gestion APT du ${DATE}" admin@gulliver77.org
+cat "$LOGFILE" | mail -s "Rapport de gestion APT du ${DATE}" adresse_mail
 
 # Afficher un message de confirmation
-echo "Les opérations sont terminées. Le rapport a été envoyé à admin@gulliver77.org"
+echo "Les opérations sont terminées. Le rapport a été envoyé à adresse_mail"
 ```
 
 Voici les explications du script :
@@ -43,7 +43,7 @@ Voici les explications du script :
 2. La commande `sudo -v` demande le mot de passe sudo une seule fois au début
 3. Toutes les commandes sont exécutées avec le flag `-y` pour répondre automatiquement "yes"
 4. Les sorties sont redirigées vers le fichier log (`2>&1` capture aussi les erreurs)
-5. Le fichier est envoyé par email avec la commande `mail`
+5. Le fichier est envoyé par email avec la commande `mail` (remplacer <adresse_mail> par votre adresse email)
 6. Un message de confirmation est affiché à la fin
 
 Pour utiliser ce script :
